@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/styles.css')}}">
+</head>
+<body>
+  <div class = 'login'>
+    <div class="header">
+      <img src="{{ url_for('static',filename = 'css/cars.jpg')}}" alt="Car Photo" class="car-photo">
+      <h1>Used Car Price Predictor</h1>
+    </div>
+    <form action="/predict" method="post">
+        <label for="Year">Year:</label>
+        <input type="text" id="Year" name="Year" required><br>
+
+        <label for="Milesrun">Milesrun:</label>
+        <input type="text" id="Milesrun" name="Milesrun" required><br>
+
+        <label for="City">City:</label>
+        <input type="text" id="City" name="City" required><br>
+
+        <label for="State">State:</label>
+        <input type="text" id="State" name="State" required><br>
+
+        <label for="Maker">Maker:</label>
+        <input type="text" id="Maker" name="Maker" required><br>
+
+        <button type="submit">Predict Price</button>
+    </form>
+    <br>
+    <br>
+    <div id = 'pred_text'>{{ pred_text }}</div>
+  </div>
+</body>
+</html>
